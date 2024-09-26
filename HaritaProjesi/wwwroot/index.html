@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@v10.1.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.1.0/ol.css">
+    
+
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+
+        .menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map" class="map"></div>
+
+    <script src="js/app.js"></script>
+
+    <div class="menu">
+        <button id="add-point">Add Point</button>
+        <button id="query-points">Query</button>
+    </div>
+    <script src="js/app.js"></script>
+    <!-- Add Point Panel -->
+    <div id="addPointPanel" style="display:none;">
+        <label for="pointX">X Coordinate:</label>
+        <input type="text" id="pointX"><br>
+        <label for="pointY">Y Coordinate:</label>
+        <input type="text" id="pointY"><br>
+        <label for="pointName">Name:</label>
+        <input type="text" id="pointName"><br>
+        <button id="savePoint">Save</button>
+    </div>
+
+    <!-- Query Panel -->
+    <div id="queryPanel" style="display:none;">
+        <table id="pointsTable">
+            <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Update Point Panel -->
+    <div id="updatePointPanel" style="display:none;">
+        <label for="updatePointX">X Coordinate:</label>
+        <input type="text" id="updatePointX"><br>
+        <label for="updatePointY">Y Coordinate:</label>
+        <input type="text" id="updatePointY"><br>
+        <label for="updatePointName">Name:</label>
+        <input type="text" id="updatePointName"><br>
+        <input type="hidden" id="updatePointId">
+        <button id="updatePoint">Update</button>
+    </div>
+
+</body>
+</html>
